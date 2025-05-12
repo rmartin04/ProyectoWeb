@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		let oper = "";
+		let numero = 0;
+		function operar (operacion){
+			alert("Operacion: " + operacion)
+			console.log("Operacion")
+			oper = operacion;
+			cajaNumero = document.getElementById("numeroIntroducido");
+			numero = cajaNumero.value;
+			console.log(numero)
+			cajaNumero.value = "";
+			cajaNumero.focus();
+		}
+		
+		function resultado(){
+			cajaNumero = document.getElementById("numeroIntroducido");
+			alert("'"+cajaNumero.value+"'");
+			if(cajaNumero.value == "") {
+				alert("Introduce un número");
+				cajaNumero.focus();
+			}else{
+				cajaResultado = document.getElementById("numeroResultado");
+				
+				result = numero + oper + cajaNumero.value;
+				console.log(result)
+				cajaResultado.value = eval(result);
+				
+			}
+		}
+		
+		
+	</script>
+
+
+</head>
+<body>
+
+<h1>Calculadora</h1>
+<form action= "" method="post">
+	Número: <input id="numeroIntroducido" type="number" placeholder="Introduce un número" value="0"/>
+	<br>
+	Resultado: <input id="numeroResultado" type="number" readonly/>
+	<br>
+	<a href="#" onclick="operar('+')">
+		<img  src="../../img/calculadora/botonSuma.png" width="50" height="50"></img>
+	</a>
+	<br><br>
+	<a href="#" onclick="operar('-')">
+		<img src="../../img/calculadora/botonSuma.png" width="50" height="50"></img>
+	</a>
+	<br><br>
+	<a href="#" onclick="operar('*')">
+		<img src="../../img/calculadora/botonSuma.png" width="50" height="50"></img>
+	</a>
+	<br><br>
+	<a href="#" onclick="operar('/')">
+		<img src="../../img/calculadora/botonSuma.png" width="50" height="50"></img>
+	</a>
+	<br><br>
+	<a href="#" onclick="operacion()">
+		<img src="../../img/calculadora/botonSuma.png" width="100" height="50"></img>
+	</a>
+	<br><br>
+
+</form>
+</body>
+</html>
