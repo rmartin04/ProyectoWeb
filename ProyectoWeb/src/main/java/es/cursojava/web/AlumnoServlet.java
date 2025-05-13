@@ -36,4 +36,11 @@ public class AlumnoServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+	}
+	
+
 }
