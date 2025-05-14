@@ -49,14 +49,14 @@ public class CalculadoraServlet extends HttpServlet {
 			resp.getWriter().append(operacion +"Operacion no soportada");
 			break;
 		}
-
+		//resp.sendRedirect("calculo.html");
 		resp.getWriter().append("<h1>Resultado: ").append(String.valueOf(resultado)).append("</h1>");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		super.doPost(req, resp);
+		doPost(req, resp);
 	}
 
 	@Override
