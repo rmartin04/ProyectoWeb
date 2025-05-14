@@ -2,26 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Calculadora Servlet</title>
 </head>
 <body>
-    <form action="" method="post">
-		Introduce el primer número: <br> <input type="text" required name="campo_de_texto" placeholder="Primer número"
+    <form action="http://localhost:8082/ProyectoWeb/calculadora" method="get">
+		Introduce el primer número: <br> <input type="text" required name="num1" placeholder="Primer número"
 			size="20" maxlength="10"><br><br>
-		Introduce el segundo número: <br> <input type="text" required name="campo_de_texto2" placeholder="Segundo número"
+		Introduce el segundo número: <br> <input type="text" required name="num2" placeholder="Segundo número"
 		    size="20" maxlength="10"><br>
 		<br> Lista de operaciones: <br>
-		<select name="lista_de_operaciones">
+		<select name="operacion"required>
 			<option value="opcion0" selected>Seleccione una operación</option>
-			<option value="+">Suma</option>
-			<option value="-">Resta</option>
-			<option value="*">Multiplicación</option>
-			<option value="/">División</option>
+			<option value="suma">Suma</option>
+			<option value="resta">Resta</option>
+			<option value="multiplicacion">Multiplicación</option>
+			<option value="division">División</option>
 		</select>
 		<br>
-		<br> Área de texto: <br>
-		<textarea name="area_de_texto" rows="3" cols="20" maxlength="200">En este control del formulario se pueden escribir varias líneas de texto.
-		</textarea>
+		
 		<br>
 		<br>
 		<button type="reset">Resetear</button>

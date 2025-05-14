@@ -46,10 +46,11 @@ public class CalculadoraServlet extends HttpServlet {
 			resultado = Integer.parseInt(num1) / Integer.parseInt(num2);
 			break;
 		default:
+			resp.getWriter().append(operacion +"Operacion no soportada");
 			break;
 		}
 
-		resp.getWriter().append("Resultado: ").append(String.valueOf(resultado));
+		resp.getWriter().append("<h1>Resultado: ").append(String.valueOf(resultado)).append("</h1>");
 	}
 
 	@Override
