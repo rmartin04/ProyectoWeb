@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,15 @@
 			<option value="division">División</option>
 		</select>
 		<br>
+		<br>
+		<%
+		if (request.getParameter("resultado") != null) {
+			int resultado = Integer.parseInt(request.getParameter("resultado"));
 		
+		%>
+			<h2>Resultado: <%= resultado %></h2>
+			
+			<%} %>
 		<br>
 		<br>
 		<button type="reset">Resetear</button>

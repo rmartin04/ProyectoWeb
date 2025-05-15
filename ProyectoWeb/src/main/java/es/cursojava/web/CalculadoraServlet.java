@@ -51,7 +51,7 @@ public class CalculadoraServlet extends HttpServlet {
 		}
 		//resp.sendRedirect("calculo.html");
 		//resp.getWriter().append("<h1>Resultado: ").append(String.valueOf(resultado)).append("</h1>");
-		resp.sendRedirect("Prueba.jsp?repeticiones="+num1);
+		resp.sendRedirect("calculo.jsp?resultado=" + resultado);
 	}
 
 	@Override
