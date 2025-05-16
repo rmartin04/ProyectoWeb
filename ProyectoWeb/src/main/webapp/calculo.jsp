@@ -35,7 +35,10 @@
 
 		<%
 		CalculadoraDTO dto2 = (CalculadoraDTO) request.getAttribute("dto");
+		if (dto2 != null) {
 		%>
+		<p>Tengo el dto!!!</p>
+		<%} %>
 
 
 

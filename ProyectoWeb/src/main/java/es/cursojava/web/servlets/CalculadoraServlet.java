@@ -48,7 +48,8 @@ public class CalculadoraServlet extends HttpServlet {
 		req.setAttribute("dto", dto);
 		CalculadoraDTO dto2 = (CalculadoraDTO) req.getAttribute("dto");
 		
-		resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
+		//resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
+		req.getRequestDispatcher("calculo.jsp").forward(req, resp);
 		
 //		int resultado = 0;
 //
