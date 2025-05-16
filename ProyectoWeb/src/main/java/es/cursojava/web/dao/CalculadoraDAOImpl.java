@@ -2,17 +2,24 @@ package es.cursojava.web.dao;
 
 import java.util.List;
 
-import es.cursojava.web.entities.CalculadoraEntity;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import es.cursojava.web.utils.HibernateUtil;
+import es.cursojava.web.entities.Calculadora;
 
 public class CalculadoraDAOImpl implements CalculadoraDAO {
 
 	@Override
-	public void insertar(CalculadoraEntity calculadora) {
-		
+	public void insertar(Calculadora calculadora) {
+		 Session session = HibernateUtil.getSession();
+	        Transaction tx = session.beginTransaction();
+	        session.persist(calculadora);
+	        tx.commit();
 	}
 
 	@Override
-	public void actualizar(CalculadoraEntity calculadora) {
+	public void actualizar(Calculadora calculadora) {
 		// TODO Auto-generated method stub
 
 	}
@@ -24,13 +31,13 @@ public class CalculadoraDAOImpl implements CalculadoraDAO {
 	}
 
 	@Override
-	public CalculadoraEntity obtenerPorId(Long id) {
+	public Calculadora obtenerPorId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<CalculadoraEntity> obtenerTodos() {
+	public List<Calculadora> obtenerTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}

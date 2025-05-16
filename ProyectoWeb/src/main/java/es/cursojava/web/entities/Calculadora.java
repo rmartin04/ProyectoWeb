@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "TB_CALCULADORA")
-public class CalculadoraEntity {
+public class Calculadora {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,11 +27,11 @@ public class CalculadoraEntity {
 	@Column(name="mensaje")
 	private String mensaje;
 	
-	public CalculadoraEntity() {
+	public Calculadora() {
 		
 	}
 
-	public CalculadoraEntity(int num1, int num2, String operacion) {
+	public Calculadora(int num1, int num2, String operacion) {
 		super();
 		this.num1 = num1;
 		this.num2 = num2;
