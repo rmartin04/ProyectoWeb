@@ -1,6 +1,8 @@
 package es.cursojava.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -51,7 +53,19 @@ public class CalculadoraServlet extends HttpServlet {
 		}
 		//resp.sendRedirect("calculo.html");
 		//resp.getWriter().append("<h1>Resultado: ").append(String.valueOf(resultado)).append("</h1>");
-		resp.sendRedirect("calculo.jsp?resultado=" + resultado);
+		//resp.sendRedirect("calculo.jsp?resultado=" + resultado);
+		
+	    List<String>nombres = new ArrayList<String>();
+	    nombres.add("Juan");
+	    nombres.add("Pedro");
+	    nombres.add("Luis");
+	    nombres.add("Ana");
+	    // Pasar la lista al JSP mediante el request
+        req.setAttribute("nombres", nombres);
+
+        // Redirigir al JSP
+        req.getRequestDispatcher("calculo.jsp?resultado=" + resultado).forward(req, resp);
+		
 	}
 
 	@Override
