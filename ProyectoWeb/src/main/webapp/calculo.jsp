@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="es.cursojava.web.dto.CalculadoraDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>Calculadora Servlet</title>
 </head>
 <body>
-	<form action="calculadora" method="post">
+	<form action="calculadora" method="get">
 		Introduce el primer número: <br> <input type="text" required
 			name="num1" placeholder="Primer número" size="20" maxlength="10"><br>
 		<br> Introduce el segundo número: <br> <input type="text"
@@ -21,34 +21,27 @@
 			<option value="division">División</option>
 		</select> <br> <br>
 		<%
-		if (request.getParameter("resultado") != null) {
-			int resultado = Integer.parseInt(request.getParameter("resultado"));
+		if (request.getParameter("mensaje") != null) {
+			String mensaje = request.getParameter("mensaje");
 		%>
-		<h2>
-			Resultado:
-			<%=resultado%></h2>
+
+
+		<h2><%=mensaje%></h2>
 
 		<%
 		}
 		%>
 
-		
-		<h2>Lista de Nombres</h2>
-		<ul>
-			
-			<c:foreach var="nombre" items="${nombres}">
-		
-			<li>${nombres}</li>
-			
-			</c:foreach>
-	    </ul> 
-          
+
+		<%
+		CalculadoraDTO dto2 = (CalculadoraDTO) request.getAttribute("dto");
+		%>
 
 
-			<br>
-			<br>
-			<button type="reset">Resetear</button>
-			<button type="submit">Enviar</button>
+
+		<br> <br>
+		<button type="reset">Resetear</button>
+		<button type="submit">Enviar</button>
 	</form>
 
 </body>
