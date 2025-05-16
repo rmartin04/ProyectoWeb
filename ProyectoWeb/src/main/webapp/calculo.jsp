@@ -7,7 +7,7 @@
 <title>Calculadora Servlet</title>
 </head>
 <body>
-	<form action="calculadora" method="get">
+	<form action="calculadora" method="post">
 		Introduce el primer número: <br> <input type="text" required
 			name="num1" placeholder="Primer número" size="20" maxlength="10"><br>
 		<br> Introduce el segundo número: <br> <input type="text"
