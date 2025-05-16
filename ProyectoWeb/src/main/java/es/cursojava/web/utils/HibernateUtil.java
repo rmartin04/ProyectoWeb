@@ -1,6 +1,6 @@
 package es.cursojava.web.utils;
 
-import javax.security.auth.login.Configuration;
+import org.hibernate.cfg.Configuration;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
