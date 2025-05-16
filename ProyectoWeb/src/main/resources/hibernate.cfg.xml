@@ -45,5 +45,6 @@
 		<mapping class="es.cursojava.hibernate.entities.Book"/>
 		<mapping class="es.cursojava.hibernate.entities.Pedidos"/>
 		<mapping class="es.cursojava.hibernate.entities.Carrera"/>
+		<mapping class="es.cursojava.web.entities.CalculadoraEntity"/>
     </session-factory>
 </hibernate-configuration>
