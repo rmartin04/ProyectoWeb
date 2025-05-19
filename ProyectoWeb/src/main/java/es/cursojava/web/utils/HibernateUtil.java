@@ -27,6 +27,7 @@ public class HibernateUtil {
                     .configure() // Carga hibernate.cfg.xml
                     .buildSessionFactory();
             session = sessionFactory.openSession();
+            System.out.println("Session creada");
         } catch (Throwable ex) {
             System.err.println("Error al crear la SessionFactory." + ex);
             throw new ExceptionInInitializerError(ex);

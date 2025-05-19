@@ -2,6 +2,9 @@ package es.cursojava.web.entities;
 
 
 
+import java.util.Calendar;
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,18 +27,56 @@ public class Calculadora {
 	private String operacion;
 	@Column(name="resultado" , nullable = false)
 	private int resultado;
-	@Column(name="mensaje")
-	private String mensaje;
 	
+	@Column(name="fecha")
+	private Date fecha;
+	
+	
+
+
 	public Calculadora() {
-		
+		super();
 	}
+
+
 
 	public Calculadora(int num1, int num2, String operacion) {
 		super();
 		this.num1 = num1;
 		this.num2 = num2;
 		this.operacion = operacion;
+	}
+	
+	
+
+	public Calculadora(Long id, int num1, int num2, String operacion, int resultado, Date fecha) {
+		super();
+		this.id = id;
+		this.num1 = num1;
+		this.num2 = num2;
+		this.operacion = operacion;
+		this.resultado = resultado;
+		 Calendar cal = Calendar.getInstance();
+	        cal.set(Calendar.HOUR_OF_DAY, 0);
+	        cal.set(Calendar.MINUTE, 0);
+	        cal.set(Calendar.SECOND, 0);
+	        cal.set(Calendar.MILLISECOND, 0);
+	        this.fecha= cal.getTime();
+	}
+
+	public Calculadora(int num1, int num2, String operacion, int resultado,Date fecha) {
+		super();
+		this.num1 = num1;
+		this.num2 = num2;
+		this.operacion = operacion;
+		this.resultado = resultado;
+		 Calendar cal = Calendar.getInstance();
+	        cal.set(Calendar.HOUR_OF_DAY, 0);
+	        cal.set(Calendar.MINUTE, 0);
+	        cal.set(Calendar.SECOND, 0);
+	        cal.set(Calendar.MILLISECOND, 0);
+	        this.fecha= cal.getTime();
+		
 	}
 
 	public Long getId() {
@@ -77,19 +118,22 @@ public class Calculadora {
 	public void setResultado(int resultado) {
 		this.resultado = resultado;
 	}
+	
 
-	public String getMensaje() {
-		return mensaje;
+	
+
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	@Override
 	public String toString() {
 		return "CalculadoraEntity [id=" + id + ", num1=" + num1 + ", num2=" + num2 + ", operacion=" + operacion
-				+ ", resultado=" + resultado + ", mensaje=" + mensaje + "]";
+				+ ", resultado=" + resultado + ", fecha=" + fecha + "]";
 	}
 	
 	

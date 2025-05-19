@@ -6,16 +6,22 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import es.cursojava.web.utils.HibernateUtil;
+
+import es.cursojava.web.dto.CalculadoraDTO;
 import es.cursojava.web.entities.Calculadora;
 
 public class CalculadoraDAOImpl implements CalculadoraDAO {
 
+	public CalculadoraDAOImpl() {
+		super();
+	}
+
 	@Override
 	public void insertar(Calculadora calculadora) {
-		 Session session = HibernateUtil.getSession();
-	        Transaction tx = session.beginTransaction();
-	        session.persist(calculadora);
-	        tx.commit();
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		session.persist(calculadora);
+		tx.commit();
 	}
 
 	@Override
@@ -38,8 +44,10 @@ public class CalculadoraDAOImpl implements CalculadoraDAO {
 
 	@Override
 	public List<Calculadora> obtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = HibernateUtil.getSession();
+		List<Calculadora> lista = session.createQuery("from Calculadora", Calculadora.class).list();
+		return lista;
+
 	}
 
 	@Override

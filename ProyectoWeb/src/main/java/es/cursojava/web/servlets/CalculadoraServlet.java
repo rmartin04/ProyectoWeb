@@ -40,6 +40,10 @@ public class CalculadoraServlet extends HttpServlet {
 		CalculadoraDTO dto = new CalculadoraDTO(num1,num2,operacion);
 		CalculadoraService service = new CalculadoraService();
 		service.ejecutaOperacion(dto);
+		service.insertarCalculadora(dto);
+		List<CalculadoraDTO> datos = service.obtenerTodos();
+		req.setAttribute("datos", datos);
+		req.getRequestDispatcher("consulta.jsp").forward(req, resp);
 		
 		System.out.println("Resultado: " + dto.getResultado());
 		
@@ -49,7 +53,7 @@ public class CalculadoraServlet extends HttpServlet {
 		CalculadoraDTO dto2 = (CalculadoraDTO) req.getAttribute("dto");
 		
 		//resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
-		req.getRequestDispatcher("calculo.jsp").forward(req, resp);
+		//req.getRequestDispatcher("calculo.jsp").forward(req, resp);
 		
 //		int resultado = 0;
 //

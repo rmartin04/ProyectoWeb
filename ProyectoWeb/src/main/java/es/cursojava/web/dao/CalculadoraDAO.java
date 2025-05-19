@@ -2,6 +2,7 @@ package es.cursojava.web.dao;
 
 import java.util.List;
 
+import es.cursojava.web.dto.CalculadoraDTO;
 import es.cursojava.web.entities.Calculadora;
 
 public interface CalculadoraDAO {
@@ -25,5 +26,7 @@ public interface CalculadoraDAO {
 	public int multiplicacion(int num1, int num2);
 
 	public int division(int num1, int num2);
+
+	
 
 }

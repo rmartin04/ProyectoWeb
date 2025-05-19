@@ -43,6 +43,7 @@
 
 
 		<br> <br>
+		<button href="consulta.jsp" >consultar datos</button>
 		<button type="reset">Resetear</button>
 		<button type="submit">Enviar</button>
 	</form>
