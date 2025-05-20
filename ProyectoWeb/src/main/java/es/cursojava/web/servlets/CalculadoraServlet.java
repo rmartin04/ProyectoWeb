@@ -30,27 +30,17 @@ public class CalculadoraServlet extends HttpServlet {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Entrando en doGet de CalculadoraServlet");
 
-		String numero1 = req.getParameter("num1");
-		String numero2 = req.getParameter("num2");
-		String operacion = req.getParameter("operacion");
-		
-		 int num1 = Integer.parseInt(numero1);
-		 int num2 = Integer.parseInt(numero2);
-		
-		CalculadoraDTO dto = new CalculadoraDTO(num1,num2,operacion);
 		CalculadoraService service = new CalculadoraService();
-		service.ejecutaOperacion(dto);
-		service.insertarCalculadora(dto);
 		List<CalculadoraDTO> datos = service.obtenerTodos();
 		req.setAttribute("datos", datos);
 		req.getRequestDispatcher("consulta.jsp").forward(req, resp);
 		
-		System.out.println("Resultado: " + dto.getResultado());
-		
-		// Enviar el resultado al JSP
-		
-		req.setAttribute("dto", dto);
-		CalculadoraDTO dto2 = (CalculadoraDTO) req.getAttribute("dto");
+//		System.out.println("Resultado: " + dto.getResultado());
+//		
+//		// Enviar el resultado al JSP
+//		
+//		req.setAttribute("dto", dto);
+//		CalculadoraDTO dto2 = (CalculadoraDTO) req.getAttribute("dto");
 		
 		//resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
 		//req.getRequestDispatcher("calculo.jsp").forward(req, resp);
@@ -94,7 +84,19 @@ public class CalculadoraServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		doPost(req, resp);
+		String numero1 = req.getParameter("num1");
+		String numero2 = req.getParameter("num2");
+		String operacion = req.getParameter("operacion");
+		
+		 int num1 = Integer.parseInt(numero1);
+		 int num2 = Integer.parseInt(numero2);
+		
+		CalculadoraDTO dto = new CalculadoraDTO(num1,num2,operacion);
+		CalculadoraService service = new CalculadoraService();
+		service.ejecutaOperacion(dto);
+		service.insertarCalculadora(dto);
+		
+		resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
 	}
 
 	@Override

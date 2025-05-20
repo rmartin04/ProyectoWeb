@@ -7,13 +7,13 @@
 <title>Calculadora Servlet</title>
 </head>
 <body>
-	<form action="calculadora" method="get">
+	<form action="calculadora" method="post">
 		Introduce el primer número: <br> <input type="text" required
 			name="num1" placeholder="Primer número" size="20" maxlength="10"><br>
 		<br> Introduce el segundo número: <br> <input type="text"
 			required name="num2" placeholder="Segundo número" size="20"
 			maxlength="10"><br> <br> Lista de operaciones: <br>
-		<select name="operacion" required>
+		<select required name="operacion" >
 			<option value="opcion0" selected>Seleccione una operación</option>
 			<option value="suma">Suma</option>
 			<option value="resta">Resta</option>
@@ -43,10 +43,12 @@
 
 
 		<br> <br>
-		<button href="consulta.jsp" >consultar datos</button>
+		
 		<button type="reset">Resetear</button>
 		<button type="submit">Enviar</button>
 	</form>
+	<br> <br>
+		<a href="calculadora" >consultar operaciones</a>
 
 </body>
 </html>

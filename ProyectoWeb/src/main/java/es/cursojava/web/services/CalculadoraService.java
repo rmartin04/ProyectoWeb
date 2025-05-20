@@ -48,7 +48,7 @@ public class CalculadoraService {
          dao.insertar(calculadora);
         System.out.println("Insertando en la base de datos: " + dto);
         // Simulación de inserción
-        dto.setMensaje("Resultado insertado en la base de datos");
+        dto.setMensaje("Resultado de la "+dto.getOperacion()+" : "+dto.getResultado()+"\n\tInsertado en la base de datos");
         System.out.println(dto.getMensaje());
         
     }

@@ -9,13 +9,13 @@
 <body>
 	<h2>Consulta de operaciones</h2>
 
-	<table action="calculadora" border="6">
+	<table  border="6">
 		<tr>
 			<th>Primer número</th>
 			<th>Segundo número</th>
 			<th>Operación</th>
 			<th>Resultado</th>
-			<th>Fecha</th>
+			<th>Fecha de insercion</th>
 		</tr>
 		<%
     List<CalculadoraDTO> dto = (List<CalculadoraDTO>) request.getAttribute("datos");
