@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Consulta de operaciones</title>
 </head>
 <body>
-	<h2>Consulta de datos</h2>
+	<h2>Consulta de operaciones</h2>
 
-	<table action="calculadora" border="1">
+	<table action="calculadora" border="6">
 		<tr>
 			<th>Primer número</th>
 			<th>Segundo número</th>
