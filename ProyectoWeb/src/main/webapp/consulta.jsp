@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="es.cursojava.web.dto.CalculadoraDTO"%>
+	pageEncoding="UTF-8" import="es.cursojava.web.dto.CalculadoraDTO" import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,18 +18,28 @@
 			<th>Fecha</th>
 		</tr>
 		<%
-    CalculadoraDTO dto = (CalculadoraDTO) request.getAttribute("datos");
+    List<CalculadoraDTO> dto = (List<CalculadoraDTO>) request.getAttribute("datos");
     if (dto != null) {
-    	for (CalculadoraDTO dto : lista) {
+    	for (CalculadoraDTO datos : dto) {
     	%>
 		<tr>
-		    <td><%= dto.getNum1() %></td>
-		    <td><%= dto.getNum2() %></td>
-			<td><%= dto.getOperacion() %></td>
-			<td><%= dto.getResultado() %></td>
-			<td><%= dto.getFecha() %></td>
+		    <td><%= datos.getNum1() %></td>
+		    <td><%= datos.getNum2() %></td>
+			<td><%= datos.getOperacion() %></td>
+			<td><%= datos.getResultado() %></td>
+			<td><%= datos.getFecha() %></td>
 		</tr>
-	<%
-		}%>
+		<%
+    	}
+    } else {
+    	%>
+    	
+    	<p>No hay datos para mostrar.</p>
+    	
+    <%
+    }
+    %>	
+   
+	
 </body>
 </html>
