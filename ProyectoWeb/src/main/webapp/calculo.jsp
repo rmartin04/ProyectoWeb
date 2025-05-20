@@ -13,7 +13,7 @@
 		<br> Introduce el segundo número: <br> <input type="text"
 			required name="num2" placeholder="Segundo número" size="20"
 			maxlength="10"><br> <br> Lista de operaciones: <br>
-		<select required name="operacion" >
+		<select name="operacion" required>
 			<option value="opcion0" selected>Seleccione una operación</option>
 			<option value="suma">Suma</option>
 			<option value="resta">Resta</option>
