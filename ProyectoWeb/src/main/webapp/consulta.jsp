@@ -9,7 +9,7 @@
 <body>
 	<h2>Consulta de datos</h2>
 
-	<table border="1">
+	<table action="calculadora" border="1">
 		<tr>
 			<th>Primer número</th>
 			<th>Segundo número</th>
@@ -39,7 +39,7 @@
     <%
     }
     %>	
-   
+   </table>	
 	
 </body>
 </html>

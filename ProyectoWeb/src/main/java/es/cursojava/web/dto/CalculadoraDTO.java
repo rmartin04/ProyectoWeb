@@ -1,6 +1,5 @@
 package es.cursojava.web.dto;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class CalculadoraDTO {
@@ -20,12 +19,7 @@ public class CalculadoraDTO {
 		this.num2 = num2;
 		this.operacion = operacion;
 		this.resultado = resultado;
-		 Calendar cal = Calendar.getInstance();
-	        cal.set(Calendar.HOUR_OF_DAY, 0);
-	        cal.set(Calendar.MINUTE, 0);
-	        cal.set(Calendar.SECOND, 0);
-	        cal.set(Calendar.MILLISECOND, 0);
-	        this.fecha= cal.getTime();
+		this.fecha = fecha;
 	}
 
 
