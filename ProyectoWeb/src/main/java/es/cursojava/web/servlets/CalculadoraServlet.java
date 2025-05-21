@@ -96,7 +96,7 @@ public class CalculadoraServlet extends HttpServlet {
 		service.ejecutaOperacion(dto);
 		service.insertarCalculadora(dto);
 		
-		resp.sendRedirect("calculo.jsp?mensaje=" + dto.getMensaje());
+		resp.sendRedirect("calculo2.jsp?mensaje=" + dto.getMensaje());
 	}
 
 	@Override
