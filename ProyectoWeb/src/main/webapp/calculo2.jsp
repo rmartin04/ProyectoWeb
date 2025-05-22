@@ -5,83 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Calculadora Servlet</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #fce4ec);
-      margin: 0;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    h2 {
-      color: #00796b;
-      text-align: center;
-    }
-
-    label, select, input {
-      display: block;
-      width: 100%;
-      margin-top: 15px;
-      font-size: 16px;
-    }
-
-    input, select {
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 48%;
-      padding: 12px;
-      margin-top: 20px;
-      border: none;
-      border-radius: 6px;
-      background-color: #00796b;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #004d40;
-    }
-
-    .btn-group {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    a {
-      margin-top: 20px;
-      display: inline-block;
-      text-decoration: none;
-      color: #007acc;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    p {
-      color: green;
-      font-weight: bold;
-    }
-  </style>
+ 
+  <link rel="stylesheet" href="css/estilos_calculadora.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -123,7 +49,25 @@
     </div>
   </form>
 
-  <a href="calculadora">Consultar operaciones</a>
+<form action="calculadora" method="get" style="margin-top: 30px; text-align: center;">
+  <button type="submit" style="
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background 0.3s ease;
+  " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <i class="fas fa-table"></i> Consultar operaciones
+  </button>
+</form>
+
 
 </body>
 </html>
